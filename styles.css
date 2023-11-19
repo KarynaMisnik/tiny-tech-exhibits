@@ -30,6 +30,8 @@
   --counter-purple-clr: #5b189c;
   --counter-green-clr: #165343;
   --counter-white-clr: #ffffff;
+  /* Password Generator */
+  --pswGenerator-bg-clr: #040f13;
 }
 
 * {
@@ -197,8 +199,15 @@ h1::after {
 
 /* === NEON BUTTON ENDS OCT 2022 === */
 
+/* !!! COUNTER AND PSW GWNWRATOR CONTAINER !!! */
+.counter-and-pswGenerator-container {
+  display: flex;
+}
+
 /* === COUNTER DEC 2022 === */
+
 .scrimba-counter {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,3 +261,54 @@ h1::after {
   background: var(--counter-green-clr);
 }
 /* === COUNTER ENDS DEC 2022 === */
+
+/* === PASSWORD GENERATOR DEC 2022 === */
+.psw-generator-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--pswGenerator-bg-clr);
+}
+.psw-generator-container h1 {
+  color: #fafbfa;
+  font-family: "Abril Fatface", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.psw-generator-container span {
+  color: #06aa51;
+  font-family: "Abril Fatface", cursive;
+}
+
+.psw-generator-container p {
+  color: #89928d;
+  font-family: "Abril Fatface", cursive;
+  margin: 10px 10px;
+  font-size: 25px;
+}
+
+.psw-generator-container button {
+  margin: 20px 20px;
+  padding: 1em;
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid #fafbfa;
+  background: #06aa51;
+  color: #fafbfa;
+}
+
+.psw-generator-container input {
+  padding: 1em;
+  color: #06aa51;
+  background: #c0c2c0;
+  border-radius: 5px;
+}
+
+.psw-generator-container p {
+  color: #fafbfa;
+}
+/* === PASSWORD GENERATOR ENDS DEC 2022 === */

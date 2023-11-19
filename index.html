@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="styles.css">
     
@@ -21,6 +23,7 @@
     <div class="glitch"><h1 class="glitch-text">GLITCHING TEXT</h1></div>
     </div>
     <div class="neon-button"><a href="#" class="button">BUTTON</a></div>
+    <div class="counter-and-pswGenerator-container">
     <div class="scrimba-counter">
         <small>Type in the field what you want to count, push "increment", save when you want to count smth else</small>
         <h1>Counter</h1>
@@ -32,6 +35,21 @@
         <button class="counter-btn" id="save-btn" onclick="save()">SAVE</button>
         <p id="save-el">Previous entries of: </p>
     
+</div>
+<div class="psw-generator-container">
+    <h1>Generate a <span>random password</span></h1>
+    <p>Never use an insecure password again</p>
+    <h1>Generate passwords</h1>
+    <div class="btn-container">
+        <button id="GenerateEigth" onclick="pswSizeEight()">8-symbols size</button>
+        <button id="GenerateTen" onclick="pswSizeTen()">10-symbols size</button>
+        <button id="GenerateFifteen" onclick="pswSizeFifteen()">15-symbols size</button>
+        <button id="GenerateTwenty" onclick="pswSizeTwenty()">20-symbols size</button>
+    </div>
+    <div class="container">
+        <p style="color:aliceblue" id="pwd">Password: </p>
+    </div>
+</div>
 </div>
     </div>
     <script src="index.js"></script>
