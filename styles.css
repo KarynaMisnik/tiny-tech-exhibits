@@ -25,6 +25,11 @@
   /* Neon button */
   --clr-neon: rgb(7, 249, 233);
   --button-clr-bg: rgb(20, 20, 20, 1);
+  /* Counter */
+  --counter-bg-clr: rgb(208, 208, 255);
+  --counter-purple-clr: #5b189c;
+  --counter-green-clr: #165343;
+  --counter-white-clr: #ffffff;
 }
 
 * {
@@ -191,3 +196,59 @@ h1::after {
 }
 
 /* === NEON BUTTON ENDS OCT 2022 === */
+
+/* === COUNTER DEC 2022 === */
+.scrimba-counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--counter-bg-clr);
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h1 {
+  padding: 1rem;
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+#category {
+  padding: 0.5rem;
+
+  border: 2px solid var(--counter-purple-clr);
+  border-radius: 5px;
+}
+
+#count-el {
+  margin: 10px 10px;
+}
+
+#save-el {
+  margin-top: 20px;
+}
+
+.counter-btn {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--counter-white-clr);
+  font-weight: bold;
+  width: 200px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#increment-btn {
+  background: var(--counter-purple-clr);
+}
+
+#save-btn {
+  background: var(--counter-green-clr);
+}
+/* === COUNTER ENDS DEC 2022 === */
