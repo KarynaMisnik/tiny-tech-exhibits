@@ -16,6 +16,22 @@
   );
   /* Typing machine effect bg-clr */
   --typing-bg-color: rgb(248, 233, 164);
+  /* Glitching effect */
+  --glitch-bg-clr: rgba(45, 46, 46, 0.63);
+  --glitch-font-clr: rgb(252, 254, 255, 1);
+  --glitch-shadow-clr1: rgba(219, 13, 47, 0.75);
+  --glitch-shadow-clr2: rgba(9, 98, 82, 0.552);
+  --glitch-shadow-clr3: rgba(45, 230, 187, 0.788);
+  /* Neon button */
+  --clr-neon: rgb(7, 249, 233);
+  --button-clr-bg: rgb(20, 20, 20, 1);
+  /* Counter */
+  --counter-bg-clr: rgb(208, 208, 255);
+  --counter-purple-clr: #5b189c;
+  --counter-green-clr: #165343;
+  --counter-white-clr: #ffffff;
+  /* Password Generator */
+  --pswGenerator-bg-clr: #040f13;
 }
 
 * {
@@ -47,14 +63,26 @@
 
 /* === GRADIENT BG DIV ENDS SEP 2022 */
 
+.glitch-and-machineTyping-wrapper {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .glitch-and-machineTyping-wrapper {
+    flex-direction: column;
+  }
+}
+
 /* === TYPING MACHINE EFFECT SEP 2022 */
 .typing-machine {
-  max-width: 100%;
-  max-height: 5rem;
-  padding: 5rem;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  max-height: 5rem;
+  padding: 5rem;
+
   background: var(--typing-bg-color);
 }
 
@@ -72,3 +100,215 @@ h1::after {
   padding: 0;
 }
 /* === TYPING MACHINE EFFECT ENDS SEP 2022 */
+
+/* === GLITCH EFFECT SEP 2022 === */
+.glitch {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glitch-bg-clr);
+  color: var(--glitch-font-clr);
+}
+
+.glitch-text {
+  padding: 1rem;
+  font-family: "Tilt Neon", sans-serif;
+  font-weight: 600;
+  text-shadow: 0.05em 0 0 var(--glitch-shadow-clr1),
+    -0.025em -0.05em 0 var(--glitch-shadow-clr2),
+    0.025em 0.05em 0 var(--glitch-shadow-clr3);
+  animation: text 1700ms infinite;
+}
+
+@keyframes text {
+  0% {
+    text-shadow: 0.05em 0 0 var(--glitch-shadow-clr1),
+      -0.05em -0.025em 0 var(--glitch-shadow-clr2),
+      -0.025em 0.05em 0 var(--glitch-shadow-clr3);
+  }
+  14% {
+    text-shadow: 0.025em 0 0 var(--glitch-shadow-clr1),
+      -0.025em -0.05em 0 var(--glitch-shadow-clr2),
+      -0.05em 0.025em 0 var(--glitch-shadow-clr3);
+  }
+  15% {
+    text-shadow: -0.05em -0.025 0 var(--glitch-shadow-clr1),
+      0.025em 0.025em 0 var(--glitch-shadow-clr2),
+      -0.05em -0.05em 0 var(--glitch-shadow-clr3);
+  }
+  49% {
+    text-shadow: 0.05em 0 0 var(--glitch-shadow-clr1),
+      0.025em 0.025em 0 var(--glitch-shadow-clr2),
+      -0.05em -0.05em 0 var(--glitch-shadow-clr3);
+  }
+  50% {
+    text-shadow: -0.025em -0.05em 0 var(--glitch-shadow-clr1),
+      0.05em 0.05em 0 var(--glitch-shadow-clr2),
+      -0.01em -0.01em 0 var(--glitch-shadow-clr3);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--glitch-shadow-clr1),
+      0.05em 0 0 var(--glitch-shadow-clr2),
+      0em -0.025em 0 var(--glitch-shadow-clr3);
+  }
+  100% {
+    text-shadow: -0.05em 0 0 var(--glitch-shadow-clr1),
+      -0.05em -0.01em 0 var(--glitch-shadow-clr2),
+      0.05em 0.025em 0 var(--glitch-shadow-clr3);
+  }
+}
+/* === GLITCH EFFECT ENDS SEP 2022 === */
+
+/* === NEON BUTTON OCT 2022 === */
+.neon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-clr-bg);
+  padding: 1rem;
+}
+.button {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--clr-neon);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.15em;
+  border: var(--clr-neon) 4px solid;
+  padding: 0.3em 0.7em;
+  text-shadow: 0 0 0.125em rgb(187, 229, 249), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--clr-neon);
+  transform: perspective(1em) rotate(40deg) scale(1, 0.35);
+  filter: blur(2em);
+}
+
+.button::after {
+  box-shadow: 0 0 1em var(--clr-neon);
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+/* === NEON BUTTON ENDS OCT 2022 === */
+
+/* !!! COUNTER AND PSW GWNWRATOR CONTAINER !!! */
+.counter-and-pswGenerator-container {
+  display: flex;
+}
+
+/* === COUNTER DEC 2022 === */
+
+.scrimba-counter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--counter-bg-clr);
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h1 {
+  padding: 1rem;
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+#category {
+  padding: 0.5rem;
+
+  border: 2px solid var(--counter-purple-clr);
+  border-radius: 5px;
+}
+
+#count-el {
+  margin: 10px 10px;
+}
+
+#save-el {
+  margin-top: 20px;
+}
+
+.counter-btn {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--counter-white-clr);
+  font-weight: bold;
+  width: 200px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#increment-btn {
+  background: var(--counter-purple-clr);
+}
+
+#save-btn {
+  background: var(--counter-green-clr);
+}
+/* === COUNTER ENDS DEC 2022 === */
+
+/* === PASSWORD GENERATOR DEC 2022 === */
+.psw-generator-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--pswGenerator-bg-clr);
+}
+.psw-generator-container h1 {
+  color: #fafbfa;
+  font-family: "Abril Fatface", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.psw-generator-container span {
+  color: #06aa51;
+  font-family: "Abril Fatface", cursive;
+}
+
+.psw-generator-container p {
+  color: #89928d;
+  font-family: "Abril Fatface", cursive;
+  margin: 10px 10px;
+  font-size: 25px;
+}
+
+.psw-generator-container button {
+  margin: 20px 20px;
+  padding: 1em;
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid #fafbfa;
+  background: #06aa51;
+  color: #fafbfa;
+}
+
+.psw-generator-container input {
+  padding: 1em;
+  color: #06aa51;
+  background: #c0c2c0;
+  border-radius: 5px;
+}
+
+.psw-generator-container p {
+  color: #fafbfa;
+}
+/* === PASSWORD GENERATOR ENDS DEC 2022 === */
