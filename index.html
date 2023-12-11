@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Nova+Square&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     
@@ -16,7 +16,36 @@
 </head>
 <body>
     <div class="one-div-wrapper">
+                <div class="soloProject">
+                    <div class="home">
+                        <h3 class="soloProject-title">HOME</h3>
+                        <div class="monitor monitorOne">
+                            <h1 class="soloProject-result" id="HomeResult">0</h1>
+                        </div>
+                        <div class="soloProject-btn-group">
+                            <button onclick="homePlusOne()" id="btn btn-one">+1</button>
+                            <button onclick="homePlusTwo()" id="btn btn-two">+2</button>
+                            <button onclick="homePlusThree()" id="btn btn-three">+3</button>
+                        </div>
+                        <button class="resetHome" onclick="resetHomeScore()">RESET</button>
+                
+                    </div>
+                    <div class="guest">
+                        <h3 class="soloProject-title">GUEST</h3>
+                        <div class="monitor monitorTwo ">
+                            <h1 class="soloProject-result" id="GuestResult">0</h1>
+                        </div>
+                        <div class="soloProject-btn-group">
+                            <button onclick="guestPlusOne()" id="btn btn-one">+1</button>
+                            <button onclick="guestPlusTwo()" id="btn btn-two">+2</button>
+                            <button onclick="guestPlusThree()" id="btn btn-three">+3</button>
+                        </div>
+                        <button class="resetGuest" onclick="resetGuestScore()">RESET</button>
+                    </div>
+                </div>
             <div class="counter-and-pswGenerator-container">
+       
+                
                 <div class="scrimba-counter">
                     <small>Type in the field what you want to count, push "increment", save when you want to count smth else</small>
                     <h1>Counter</h1>

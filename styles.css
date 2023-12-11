@@ -1,4 +1,25 @@
 :root {
+  /* FONT COLOR, MOST COMMON COLORS */
+  --white: #fff;
+  --green: #048940;
+  --black: #041014;
+  --red: #f10202;
+  --gray: #727375;
+
+  /* FONT-SIZE */
+  --h1: 2.5rem;
+  --h2: 2rem;
+  --h3: 1.75rem;
+  --h4: 1.5rem;
+  --h5: 1.25rem;
+  --h6: 1rem;
+  --p: 1rem;
+
+  /*** === FONT-WEIGHT === ***/
+  --bold: 600;
+  --bolder: 700;
+  --boldest: 900;
+
   /* Gradient bg div */
   --gradient: linear-gradient(
     to right,
@@ -36,13 +57,141 @@
   --pswGenerator-green-clr: #06aa51;
 }
 
+@media (min-width: 300px) {
+  :root {
+    --h1: 1.5rem;
+    --h2: 1rem;
+    --h3: 1.75rem;
+    --h4: 1.25rem;
+    --h5: 1rem;
+    --h6: 0.5rem;
+    --p: 1rem;
+  }
+}
+
+@media (min-width: 600px) {
+  :root {
+    --h1: 3rem;
+    --h2: 2.5rem;
+    --h3: 2rem;
+    --h4: 1.75rem;
+    --h5: 1.5rem;
+    --h6: 1.25rem;
+    --p: 1.125rem;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --h1: 4rem;
+    --h2: 3rem;
+    --h3: 2.5rem;
+    --h4: 2rem;
+    --h5: 1.75rem;
+    --h6: 1.5rem;
+    --p: 1.25rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* !!! COUNTER AND PSW GENERATOR CONTAINER !!! */
+button {
+  cursor: pointer;
+}
+
+/* === SOLO PROJECT SCRIMBA, SCORE TABLE NOV 2022 === */
+@media screen and (max-width: 768px) {
+  .soloProject {
+    flex-direction: column;
+  }
+}
+
+.soloProject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: #5887fb;
+  background: radial-gradient(at center, #5887fb, #052266);
+  padding: 2rem;
+}
+
+.home,
+.guest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: auto;
+  padding: 2rem 0;
+  border-radius: 10px;
+  border: 4px solid var(--gray);
+  background-color: var(--black);
+}
+
+.soloProject-title {
+  color: var(--white);
+  font-size: var(--h3);
+  padding-bottom: 1rem;
+}
+
+.monitor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--gray);
+  border-style: inset;
+  border-radius: 3px;
+  width: 8rem;
+  height: auto;
+  background: white;
+}
+
+.soloProject-result {
+  padding: 2rem;
+  font-size: var(--h1);
+  color: var(--black);
+  font-family: "Nova Square", cursive;
+}
+
+.soloProject-btn-group {
+  padding-top: 1rem;
+}
+
+.soloProject-btn-group button {
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  font-family: "Nova Square", cursive;
+  font-size: var(--h4);
+  font-weight: var(--boldest);
+}
+
+.resetHome,
+.resetGuest {
+  font-size: var(--h4);
+  padding: 1rem;
+  margin-top: 1rem;
+  background: var(--red);
+  border-radius: 8px;
+  font-family: "Nova Square", cursive;
+  font-weight: var(--boldest);
+  color: var(--white);
+}
+
+.highlight {
+  color: var(--green);
+}
+
+/* === SOLO PROJECT SCRIMBA, SCORE TABLE NOV 2022 ENDS === */
+
+/* !!! SOLO-PROJECT, COUNTER AND PSW GENERATOR CONTAINER !!! */
 .counter-and-pswGenerator-container {
   display: flex;
 }
