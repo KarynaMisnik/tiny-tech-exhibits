@@ -32,6 +32,8 @@
   --counter-white-clr: #ffffff;
   /* Password Generator */
   --pswGenerator-bg-clr: #040f13;
+  --pswGenerator-white-clr: #fafbfa;
+  --pswGenerator-green-clr: #06aa51;
 }
 
 * {
@@ -40,28 +42,166 @@
   box-sizing: border-box;
 }
 
-/* === GRADIENT BG DIV SEP 2022 */
-.gradient-bg {
-  max-width: 100%;
-  height: auto;
-  padding: 5rem;
-  background-image: var(--gradient);
-  animation: bg-animation 25s infinite;
+/* !!! COUNTER AND PSW GENERATOR CONTAINER !!! */
+.counter-and-pswGenerator-container {
+  display: flex;
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: rigth;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: rigth;
+@media screen and (max-width: 768px) {
+  .counter-and-pswGenerator-container {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-/* === GRADIENT BG DIV ENDS SEP 2022 */
+/* === PASSWORD GENERATOR DEC 2022 === */
+.psw-generator-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--pswGenerator-bg-clr);
+}
+.psw-generator-container h1 {
+  color: var(--pswGenerator-white-clr);
+  font-family: "Abril Fatface", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.psw-generator-container span {
+  color: var(--pswGenerator-green-clr);
+  font-family: "Abril Fatface", cursive;
+}
+
+.psw-generator-container p {
+  color: #89928d;
+  font-family: "Abril Fatface", cursive;
+  margin: 10px 10px;
+  font-size: 25px;
+}
+
+.psw-generator-container button {
+  cursor: pointer;
+  margin: 20px 20px;
+  padding: 1em;
+  font-family: "Abril Fatface", cursive;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--pswGenerator-white-clr);
+  background: var(--pswGenerator-green-clr);
+  color: #fafbfa;
+}
+
+.psw-generator-container input {
+  padding: 1em;
+  color: var(--pswGenerator-green-clr);
+  background: #c0c2c0;
+  border-radius: 5px;
+}
+
+.psw-generator-container p {
+  color: var(--pswGenerator-white-clr);
+}
+/* === PASSWORD GENERATOR ENDS DEC 2022 === */
+
+/* === COUNTER DEC 2022 === */
+
+.scrimba-counter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--counter-bg-clr);
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h1 {
+  padding: 1rem;
+  font-family: "Nova Square", cursive;
+}
+
+.scrimba-counter h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+#category {
+  padding: 0.5rem;
+
+  border: 2px solid var(--counter-purple-clr);
+  border-radius: 5px;
+}
+
+#count-el {
+  margin: 10px 10px;
+}
+
+#save-el {
+  margin-top: 20px;
+}
+
+.counter-btn {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--counter-white-clr);
+  font-weight: bold;
+  width: 200px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#increment-btn {
+  background: var(--counter-purple-clr);
+}
+
+#save-btn {
+  background: var(--counter-green-clr);
+}
+/* === COUNTER ENDS DEC 2022 === */
+
+/* === NEON BUTTON OCT 2022 === */
+.neon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-clr-bg);
+  padding: 1rem;
+}
+.button {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--clr-neon);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.15em;
+  border: var(--clr-neon) 4px solid;
+  padding: 0.3em 0.7em;
+  text-shadow: 0 0 0.125em rgb(187, 229, 249), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--clr-neon);
+  transform: perspective(1em) rotate(40deg) scale(1, 0.35);
+  filter: blur(2em);
+}
+
+.button::after {
+  box-shadow: 0 0 1em var(--clr-neon);
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+/* === NEON BUTTON ENDS OCT 2022 === */
 
 .glitch-and-machineTyping-wrapper {
   display: flex;
@@ -160,155 +300,25 @@ h1::after {
 }
 /* === GLITCH EFFECT ENDS SEP 2022 === */
 
-/* === NEON BUTTON OCT 2022 === */
-.neon-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--button-clr-bg);
-  padding: 1rem;
-}
-.button {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--clr-neon);
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 0.15em;
-  border: var(--clr-neon) 4px solid;
-  padding: 0.3em 0.7em;
-  text-shadow: 0 0 0.125em rgb(187, 229, 249), 0 0 0.45em currentColor;
-  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-  position: relative;
+/* === GRADIENT BG DIV SEP 2022 */
+.gradient-bg {
+  max-width: 100%;
+  height: auto;
+  padding: 5rem;
+  background-image: var(--gradient);
+  animation: bg-animation 25s infinite;
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  background-color: var(--clr-neon);
-  transform: perspective(1em) rotate(40deg) scale(1, 0.35);
-  filter: blur(2em);
+@keyframes bg-animation {
+  0% {
+    background-position: rigth;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: rigth;
+  }
 }
 
-.button::after {
-  box-shadow: 0 0 1em var(--clr-neon);
-  opacity: 0;
-  transition: opacity 100ms linear;
-}
-
-/* === NEON BUTTON ENDS OCT 2022 === */
-
-/* !!! COUNTER AND PSW GWNWRATOR CONTAINER !!! */
-.counter-and-pswGenerator-container {
-  display: flex;
-}
-
-/* === COUNTER DEC 2022 === */
-
-.scrimba-counter {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  background: var(--counter-bg-clr);
-  font-family: "Nova Square", cursive;
-}
-
-.scrimba-counter h1 {
-  padding: 1rem;
-  font-family: "Nova Square", cursive;
-}
-
-.scrimba-counter h2 {
-  font-size: 1rem;
-  margin: 0;
-  padding-bottom: 1rem;
-}
-
-#category {
-  padding: 0.5rem;
-
-  border: 2px solid var(--counter-purple-clr);
-  border-radius: 5px;
-}
-
-#count-el {
-  margin: 10px 10px;
-}
-
-#save-el {
-  margin-top: 20px;
-}
-
-.counter-btn {
-  border: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: var(--counter-white-clr);
-  font-weight: bold;
-  width: 200px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-#increment-btn {
-  background: var(--counter-purple-clr);
-}
-
-#save-btn {
-  background: var(--counter-green-clr);
-}
-/* === COUNTER ENDS DEC 2022 === */
-
-/* === PASSWORD GENERATOR DEC 2022 === */
-.psw-generator-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--pswGenerator-bg-clr);
-}
-.psw-generator-container h1 {
-  color: #fafbfa;
-  font-family: "Abril Fatface", cursive;
-  font-size: 40px;
-  margin-left: 20px;
-}
-
-.psw-generator-container span {
-  color: #06aa51;
-  font-family: "Abril Fatface", cursive;
-}
-
-.psw-generator-container p {
-  color: #89928d;
-  font-family: "Abril Fatface", cursive;
-  margin: 10px 10px;
-  font-size: 25px;
-}
-
-.psw-generator-container button {
-  margin: 20px 20px;
-  padding: 1em;
-  font-family: "Abril Fatface", cursive;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 2px solid #fafbfa;
-  background: #06aa51;
-  color: #fafbfa;
-}
-
-.psw-generator-container input {
-  padding: 1em;
-  color: #06aa51;
-  background: #c0c2c0;
-  border-radius: 5px;
-}
-
-.psw-generator-container p {
-  color: #fafbfa;
-}
-/* === PASSWORD GENERATOR ENDS DEC 2022 === */
+/* === GRADIENT BG DIV ENDS SEP 2022 */
