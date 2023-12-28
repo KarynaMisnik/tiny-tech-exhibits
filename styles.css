@@ -20,21 +20,6 @@
   --bolder: 700;
   --boldest: 900;
 
-  /* Gradient bg div */
-  --gradient: linear-gradient(
-    to right,
-    rgb(28, 27, 27),
-    rgb(44, 2, 68),
-    rgb(46, 3, 72, 1),
-    rgb(64, 4, 100, 1),
-    rgb(77, 7, 119, 1),
-    rgb(90, 7, 140, 1),
-    rgb(107, 12, 164, 1),
-    rgb(128, 16, 195, 1),
-    rgb(147, 26, 2020, 1),
-    rgba(174, 56, 247, 0.8),
-    rgba(214, 27, 238, 0.5)
-  );
   /* Typing machine effect bg-clr */
   --typing-bg-color: rgb(248, 233, 164);
   /* Glitching effect */
@@ -46,6 +31,19 @@
   /* Neon button */
   --clr-neon: rgb(7, 249, 233);
   --button-clr-bg: rgb(20, 20, 20, 1);
+
+  /* Orwell */
+  /* fonts */
+  --ff-text: "Special Elite", cursive;
+  /* background colors */
+  --bg-body: #c82424;
+  --bg-eye: #fbe6a7;
+  --bg-pupil: #000000;
+
+  /* border colors */
+  --clr-border_iris: #000000;
+  --clr-border_eye: #db3a30;
+  /* Orwell ends */
   /* Counter */
   --counter-bg-clr: rgb(208, 208, 255);
   --counter-purple-clr: #5b189c;
@@ -362,6 +360,72 @@ button {
   }
 }
 
+/* === ORWELL 2022 === */
+.orwell {
+  background: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+}
+
+.orwell-h1,
+.orwell-h2 {
+  text-align: center;
+  font-family: var(--ff-text);
+
+  letter-spacing: 15px;
+}
+
+.orwell-h1 {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.orwell-h2 {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.eye-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  height: 20rem;
+  background: var(--bg-eye);
+  border-radius: 55% / 55%;
+  border: 15px solid var(--clr-border_eye);
+}
+
+.iris {
+  position: absolute;
+  width: 14rem;
+  height: 14rem;
+  background-color: red;
+  background: var(--bg-body);
+  border: 10px solid var(--clr-border_iris);
+  border-radius: 50%;
+}
+
+.pupil {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 8rem;
+  height: 8rem;
+  background: var(--bg-pupil);
+  border-radius: 50%;
+}
+/* === ORWELL 2022 ENDS === */
+
 /* === TYPING MACHINE EFFECT SEP 2022 */
 .typing-machine {
   flex: 1;
@@ -448,26 +512,3 @@ h1::after {
   }
 }
 /* === GLITCH EFFECT ENDS SEP 2022 === */
-
-/* === GRADIENT BG DIV SEP 2022 */
-.gradient-bg {
-  max-width: 100%;
-  height: auto;
-  padding: 5rem;
-  background-image: var(--gradient);
-  animation: bg-animation 25s infinite;
-}
-
-@keyframes bg-animation {
-  0% {
-    background-position: rigth;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: rigth;
-  }
-}
-
-/* === GRADIENT BG DIV ENDS SEP 2022 */

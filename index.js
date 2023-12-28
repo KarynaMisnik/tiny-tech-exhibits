@@ -236,6 +236,21 @@ function pswSizeTwenty() {
 }
 /* !!! PASSWORD GENERATOR ENDS !!! */
 
+/* !!! ORWELL  !!! */
+
+var iris = document.getElementsByClassName("iris");
+document.onmousemove = function () {
+  var x = (event.clientX * 100) / window.innerWidth + "%";
+  var y = (event.clientY * 100) / window.innerHeight + "%";
+  for (var i = 0; i < 1; i++) {
+    iris[i].style.left = x;
+    iris[i].style.top = y;
+    iris[i].style.transform = "translate(-" + x + ",-" + y + ")";
+  }
+};
+
+/* !!! ORWELL ENDS !!! */
+
 /* !!! TYPING MACHINE EFFECT !!! */
 
 const textDisplay = document.getElementById("text");
