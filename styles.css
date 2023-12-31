@@ -44,6 +44,31 @@
   --clr-border_iris: #000000;
   --clr-border_eye: #db3a30;
   /* Orwell ends */
+
+  /* Beating heart */
+  /* box-shadow color */
+  --clr-shadow: #96312e;
+  /* heart color */
+  --clr-heart: #7e0f12;
+  /* border color */
+  --clr-border: #cb0323;
+  /* Beating heart ends */
+
+  /* Flipping card */
+  --bg-clr_body: linear-gradient(#3c6c5c, #e4d066);
+  --clr-diamond: #82589f;
+  --bg-clr_card: #2f3542;
+  --clr-shadow: #40407a;
+  --clr-back_card: repeating-linear-gradient(
+    45deg,
+    #2f3542 0px,
+    #ffc048 10px,
+    #2f3542 10px,
+    #82589f 10px,
+    #82589f 20px
+  );
+  /* Flipping card ends */
+
   /* Counter */
   --counter-bg-clr: rgb(208, 208, 255);
   --counter-purple-clr: #5b189c;
@@ -425,6 +450,160 @@ button {
   border-radius: 50%;
 }
 /* === ORWELL 2022 ENDS === */
+
+/* === BEATING HEART & FLIPPING CARD CONTAINER 2022 === */
+.heart-flippingCard-container {
+  display: flex;
+}
+
+/* === BEATING HEART 2022 === */
+.heart-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdcb6e;
+}
+
+@media screen and(max-width: 768px) {
+  .heart-flippingCard-container {
+    flex-direction: column;
+  }
+}
+
+.heart-container {
+  position: relative;
+  margin-right: 23%;
+  margin-bottom: 15%;
+}
+.heart {
+  position: relative;
+  animation: pulse 1000ms infinite;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 13.5em;
+  top: 0;
+  width: 13.5em;
+  height: 22em;
+  background: var(--clr-heart);
+  border-radius: 100px 100px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  border-right: 1px solid var(--clr-border);
+}
+
+.heart:before {
+  box-shadow: -40px 25px 50px 10px var(--clr-shadow);
+  border-left: 1px solid var(--clr-border);
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  box-shadow: 65px 35px 40px -25px var(--clr-shadow);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === FLIPPING CARD 2022 === */
+.card-wrapper {
+  background-color: red;
+  background-image: var(--bg-clr_body);
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+
+.card {
+  width: 500px;
+  height: auto;
+  padding: 1rem;
+}
+
+.card__content {
+  position: relative;
+  height: 700px;
+  padding: 2rem;
+  transition: transform 2s;
+  background: var(--bg-clr_card);
+  box-shadow: 0px 10px 30px 12px var(--clr-shadow);
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(0.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em;
+  backface-visibility: hidden;
+}
+
+.card__front {
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__front-content {
+  transform: translateZ(6rem);
+  width: 0;
+  height: 0;
+  border: 130px solid transparent;
+  border-bottom-color: var(--clr-diamond);
+  border-style: double;
+  position: relative;
+  top: -130px;
+}
+
+.card__front-content::after {
+  content: "";
+  position: absolute;
+  left: -130px;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border: 130px solid transparent;
+  border-top-color: var(--clr-diamond);
+  border-style: double;
+}
+
+.card__back-content {
+  transform: translateZ(3rem);
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+  background-color: red;
+  background-image: var(--clr-back_card);
+}
+/* === FLIPPING CARD ENDS === */
+
+/* === BEATING HEART & FLIPPING CARD CONTAINER ENDS === */
 
 /* === TYPING MACHINE EFFECT SEP 2022 */
 .typing-machine {
