@@ -20,6 +20,11 @@
   --bolder: 700;
   --boldest: 900;
 
+  /* Penguin freecodecamp */
+  --penguin-face: white;
+  --penguin-picorna: orange;
+  --penguin-skin: gray;
+  /* Penguin freecodecamp ends */
   /* Typing machine effect bg-clr */
   --typing-bg-color: rgb(248, 233, 164);
   /* Glitching effect */
@@ -44,6 +49,31 @@
   --clr-border_iris: #000000;
   --clr-border_eye: #db3a30;
   /* Orwell ends */
+
+  /* Beating heart */
+  /* box-shadow color */
+  --clr-shadow: #96312e;
+  /* heart color */
+  --clr-heart: #7e0f12;
+  /* border color */
+  --clr-border: #cb0323;
+  /* Beating heart ends */
+
+  /* Flipping card */
+  --bg-clr_body: linear-gradient(#3c6c5c, #e4d066);
+  --clr-diamond: #82589f;
+  --bg-clr_card: #2f3542;
+  --clr-shadow: #40407a;
+  --clr-back_card: repeating-linear-gradient(
+    45deg,
+    #2f3542 0px,
+    #ffc048 10px,
+    #2f3542 10px,
+    #82589f 10px,
+    #82589f 20px
+  );
+  /* Flipping card ends */
+
   /* Counter */
   --counter-bg-clr: rgb(208, 208, 255);
   --counter-purple-clr: #5b189c;
@@ -97,9 +127,257 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   cursor: pointer;
 }
+
+/* === PINGUIN WAVING A HAND FREECODECAMP PROJECT 2023 === */
+.penguin-wrapper {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+  position: absolute;
+  transform: skew(0deg, 44deg);
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.back-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
+  position: absolute;
+  z-index: 1;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 50%;
+  top: -75px;
+  right: -75px;
+}
+
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+  z-index: 4;
+  position: relative;
+  transition: transform 1s ease-in-out 0ms;
+}
+
+.penguin * {
+  position: absolute;
+}
+
+.penguin:active {
+  transform: scale(1.5);
+  cursor: not-allowed;
+}
+
+.penguin-head {
+  width: 50%;
+  height: 45%;
+  background: linear-gradient(45deg, var(--penguin-skin), rgb(239, 240, 228));
+  border-radius: 70% 70% 65% 65%;
+  top: 10%;
+  left: 25%;
+  z-index: 1;
+}
+
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+.eye {
+  width: 15%;
+  height: 17%;
+  background-color: black;
+  top: 45%;
+  border-radius: 50%;
+}
+
+.eye.left {
+  left: 25%;
+}
+
+.eye.right {
+  right: 25%;
+}
+
+.eye-lid {
+  width: 150%;
+  height: 100%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: -23%;
+  border-radius: 50%;
+}
+
+.blush {
+  width: 15%;
+  height: 10%;
+  background-color: pink;
+  top: 65%;
+  border-radius: 50%;
+}
+
+.blush.left {
+  left: 15%;
+}
+
+.blush.right {
+  right: 15%;
+}
+
+.beak {
+  height: 10%;
+  background-color: var(--penguin-picorna);
+  border-radius: 50%;
+}
+
+.beak.top {
+  width: 20%;
+  top: 60%;
+  left: 40%;
+}
+
+.beak.bottom {
+  width: 16%;
+  top: 65%;
+  left: 42%;
+}
+
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    rgb(134, 133, 133) 0%,
+    rgb(234, 231, 231) 25%,
+    white 67%
+  );
+  border-radius: 80% 80% 100% 100%;
+  top: 40%;
+  left: 23.5%;
+}
+
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: var(--penguin-skin);
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
+
+.arm {
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(90deg, var(--penguin-skin), rgb(209, 210, 199));
+  border-radius: 30% 30% 30% 120%;
+  z-index: -1;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  transform-origin: top left;
+  transform: rotate(130deg) scaleX(-1);
+  animation: 3s linear infinite wave;
+}
+
+.arm.right {
+  top: 0%;
+  right: -5%;
+  transform: rotate(-45deg);
+}
+
+@keyframes wave {
+  10% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+}
+
+.foot {
+  width: 15%;
+  height: 30%;
+  background-color: var(--penguin-picorna);
+  top: 85%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.foot.left {
+  left: 25%;
+  transform: rotate(80deg);
+}
+
+.foot.right {
+  right: 25%;
+  transform: rotate(-80deg);
+}
+.ground {
+  width: 100vw;
+  height: calc(100vh - 300px);
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
+  position: absolute;
+  margin-top: -58px;
+}
+/* === PINGUIN WAVING A HAND FREECODECAMP PROJECT ENDS === */
 
 /* === SOLO PROJECT SCRIMBA, SCORE TABLE NOV 2022 === */
 @media screen and (max-width: 768px) {
@@ -425,6 +703,160 @@ button {
   border-radius: 50%;
 }
 /* === ORWELL 2022 ENDS === */
+
+/* === BEATING HEART & FLIPPING CARD CONTAINER 2022 === */
+.heart-flippingCard-container {
+  display: flex;
+}
+
+/* === BEATING HEART 2022 === */
+.heart-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdcb6e;
+}
+
+@media screen and(max-width: 768px) {
+  .heart-flippingCard-container {
+    flex-direction: column;
+  }
+}
+
+.heart-container {
+  position: relative;
+  margin-right: 23%;
+  margin-bottom: 15%;
+}
+.heart {
+  position: relative;
+  animation: pulse 1000ms infinite;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 13.5em;
+  top: 0;
+  width: 13.5em;
+  height: 22em;
+  background: var(--clr-heart);
+  border-radius: 100px 100px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  border-right: 1px solid var(--clr-border);
+}
+
+.heart:before {
+  box-shadow: -40px 25px 50px 10px var(--clr-shadow);
+  border-left: 1px solid var(--clr-border);
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  box-shadow: 65px 35px 40px -25px var(--clr-shadow);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === FLIPPING CARD 2022 === */
+.card-wrapper {
+  background-color: red;
+  background-image: var(--bg-clr_body);
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+
+.card {
+  width: 500px;
+  height: auto;
+  padding: 1rem;
+}
+
+.card__content {
+  position: relative;
+  height: 700px;
+  padding: 2rem;
+  transition: transform 2s;
+  background: var(--bg-clr_card);
+  box-shadow: 0px 10px 30px 12px var(--clr-shadow);
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(0.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em;
+  backface-visibility: hidden;
+}
+
+.card__front {
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__front-content {
+  transform: translateZ(6rem);
+  width: 0;
+  height: 0;
+  border: 130px solid transparent;
+  border-bottom-color: var(--clr-diamond);
+  border-style: double;
+  position: relative;
+  top: -130px;
+}
+
+.card__front-content::after {
+  content: "";
+  position: absolute;
+  left: -130px;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border: 130px solid transparent;
+  border-top-color: var(--clr-diamond);
+  border-style: double;
+}
+
+.card__back-content {
+  transform: translateZ(3rem);
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+  background-color: red;
+  background-image: var(--clr-back_card);
+}
+/* === FLIPPING CARD ENDS === */
+
+/* === BEATING HEART & FLIPPING CARD CONTAINER ENDS === */
 
 /* === TYPING MACHINE EFFECT SEP 2022 */
 .typing-machine {
