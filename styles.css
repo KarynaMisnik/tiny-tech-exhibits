@@ -25,6 +25,17 @@
   --penguin-picorna: orange;
   --penguin-skin: gray;
   /* Penguin freecodecamp ends */
+  /* Magic Ball */
+  --gradient: linear-gradient(
+    to right,
+    #b689c0,
+    #947ec3,
+    #7858a6,
+    #5b4b8a,
+    #371b58
+  );
+
+  /* Magic Ball Ends */
   /* Typing machine effect bg-clr */
   --typing-bg-color: rgb(248, 233, 164);
   /* Glitching effect */
@@ -88,7 +99,7 @@
 @media (min-width: 300px) {
   :root {
     --h1: 1.5rem;
-    --h2: 1rem;
+    --h2: 2rem;
     --h3: 1.75rem;
     --h4: 1.25rem;
     --h5: 1rem;
@@ -100,7 +111,7 @@
 @media (min-width: 600px) {
   :root {
     --h1: 3rem;
-    --h2: 2.5rem;
+    --h2: 2.75rem;
     --h3: 2rem;
     --h4: 1.75rem;
     --h5: 1.5rem;
@@ -136,8 +147,19 @@ button {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .penguin-and-magicBall-wrapper {
+    flex-direction: column;
+  }
+}
+
+.penguin-and-magicBall-wrapper {
+  display: flex;
+}
+
 /* === PINGUIN WAVING A HAND FREECODECAMP PROJECT 2023 === */
 .penguin-wrapper {
+  flex: 1;
   background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
 }
 
@@ -336,6 +358,66 @@ button {
 }
 
 /* === PINGUIN WAVING A HAND FREECODECAMP PROJECT ENDS === */
+
+/* === MAGIC BALL 2022 === */
+.magicBall-wrapper {
+  flex: 1;
+  background: #222;
+  color: antiquewhite;
+}
+
+.ball-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+h2 {
+  font-family: "Jolly Lodger", cursive;
+  letter-spacing: 15px;
+  font-size: var(--h2);
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: var(--fw-title);
+}
+
+.stars {
+  background: url(./assets/img/night-sky.png) repeat top center;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.crystal-ball {
+  position: relative;
+  background: var(--gradient);
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 15px #c996cc inset;
+  background-size: cover;
+  background-position: center;
+  animation: bg-animation 20s infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
+  }
+}
+/* === MAGIC BALL ENDS === */
 
 /* === SOLO PROJECT SCRIMBA, SCORE TABLE NOV 2022 === */
 @media screen and (max-width: 768px) {
