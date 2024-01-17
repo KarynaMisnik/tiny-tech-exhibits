@@ -1,3 +1,7 @@
+/*FIXME:basketball score screens take too much width */
+/*FIXME: to generate psw 2 clicks are needed, but must be one */
+/*TODO: add tooltip or similar to provide link to codepen source code */
+
 :root {
   /* FONT COLOR, MOST COMMON COLORS */
   --white: #fff;
